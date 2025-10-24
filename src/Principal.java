@@ -5,7 +5,12 @@ public class Principal {
         filme1.anoDeLancamento = 1970;
         filme1.duracaoEmMinutos = 180;
 
-        System.out.println(filme1.nome);
-        System.out.println(filme1.anoDeLancamento);
+        filme1.exibeFichaTecnica();
+        filme1.avalia(8);
+        filme1.avalia(5);
+        filme1.avalia(4);
+        System.out.println(filme1.somaDasAvaliacoes);
+        System.out.println(filme1.totalDeAvaliacoes);
+        System.out.println(filme1.obterMedia());
     }
 }

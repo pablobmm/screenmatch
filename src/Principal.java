@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -30,11 +32,24 @@ public class Principal {
         filme2.setNome("A procura da felicidade");
         filme2.setAnoDeLancamento(2006);
         filme2.setDuracaoEmMinutos(117);
+        filme2.avalia(8);
+        filme2.avalia(9);
+        filme2.avalia(7.5);
+        System.out.println(filme2.obterMedia());
+        System.out.println("Total de avaliações: " + filme2.getTotalDeAvaliacoes() );
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(filme1);
         calculadora.inclui(filme2);
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(filme1);
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 }

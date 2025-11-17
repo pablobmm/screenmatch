@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme filme1 = new Filme("O poderoso chefão");
-        filme1.setAnoDeLancamento(1970);
+        Filme filme1 = new Filme("O poderoso chefão",1970);
         filme1.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + filme1.getDuracaoEmMinutos());
 
@@ -20,17 +19,14 @@ public class Principal {
         System.out.println("Total de avaliações: " + filme1.getTotalDeAvaliacoes() );
         System.out.println(filme1.obterMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost",2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme filme2 = new Filme("A procura da felicidade");
-        filme2.setAnoDeLancamento(2006);
+        Filme filme2 = new Filme("A procura da felicidade",2006);
         filme2.setDuracaoEmMinutos(117);
         filme2.avalia(8);
         filme2.avalia(9);
@@ -52,10 +48,8 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var filme3 = new Filme("Indiana Jones");
-        //filme3.setNome("Indiana Jones");
+        var filme3 = new Filme("Indiana Jones",2023);
         filme3.setDuracaoEmMinutos(153);
-        filme3.setAnoDeLancamento(2023);
         filme3.avalia(9.5);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
